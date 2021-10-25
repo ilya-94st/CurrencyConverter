@@ -1,6 +1,8 @@
 package com.example.currencyconverter.di
 
 import com.example.currencyconverter.api.Api
+import com.example.currencyconverter.main.repository.CurrencyRepository
+import com.example.currencyconverter.main.repository.MainRepository
 import com.example.currencyconverter.other.Constants
 import dagger.Module
 import dagger.Provides
@@ -25,6 +27,6 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideMainRepository(api: CurrencyApi): MainRepository = CurrencyRepository(api)
+    fun provideMainRepository(api: Api): MainRepository = CurrencyRepository(api)
 
 }
